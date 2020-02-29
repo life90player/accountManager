@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rg_parent"
+        android:layout_marginBottom="@dimen/dimen_1"/>
+
+
+    <RadioGroup
+        android:id="@+id/rg_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <RadioButton
+            android:id="@+id/rb_un_back"
+            android:layout_weight="1"
+            android:button="@null"
+            android:textColor="@android:color/white"
+            android:text="未还账单"
+            style="@style/baseRadioButton"
+            android:checked="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/rb_on_back"
+            android:layout_weight="1"
+            android:button="@null"
+            style="@style/baseRadioButton"
+            android:text="已还账单"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/rb_goods_manager"
+            android:layout_width="match_parent"
+            android:button="@null"
+            style="@style/baseRadioButton"
+            android:text="商品管理"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/rb_debt_user"
+            android:layout_weight="1"
+            style="@style/baseRadioButton"
+            android:button="@null"
+            android:text="记账用户"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </RadioGroup>
+</RelativeLayout>

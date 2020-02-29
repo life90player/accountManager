@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#E00E0E</color>
+    <color name="colorPrimaryDark">#E00E0E</color>
+    <color name="colorAccent">#E00E0E</color>
+
+    <color name="mainColor">#E00E0E</color>//主体颜色
+    <color name="titleTextColor">#000000</color>//右上角标题字体颜色
+    <color name="greyColor">#8B8B8B</color>
+    <color name="activityBackColor">#d9d9d9</color>
+</resources>

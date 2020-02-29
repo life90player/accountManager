@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">账目管理</string>
+
+    <string name="txt_main_title">账目管理系统</string>
+    <string name="txt_user_name">请输入帐号</string>
+    <string name="txt_login">登录</string>
+</resources>

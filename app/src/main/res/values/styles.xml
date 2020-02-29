@@ -1,0 +1,39 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:background">@color/activityBackColor</item>
+    </style>
+
+    <style name="fullScreenTheme">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="baseEditText" parent="baseTextView">
+        <item name="android:background">@drawable/drawable_edit</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/dimen_5</item>
+        <item name="android:paddingBottom">@dimen/dimen_5</item>
+        <item name="android:paddingStart">@dimen/dimen_10</item>
+        <item name="android:paddingEnd">@dimen/dimen_10</item>
+    </style>
+
+    <style name="baseTextView">
+        <item name="android:textSize">@dimen/ts_large</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="baseRadioButton">
+        <item name="android:textSize">@dimen/ts_x_large</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">@dimen/dimen_10</item>
+        <item name="android:paddingBottom">@dimen/dimen_10</item>
+        <item name="android:background">@drawable/drawable_main_radio</item>
+    </style>
+
+</resources>
