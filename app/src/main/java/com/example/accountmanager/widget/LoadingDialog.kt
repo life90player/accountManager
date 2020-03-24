@@ -1,13 +1,15 @@
 package com.example.accountmanager.widget
 
 import android.content.Context
-import android.view.View
+import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import com.example.accountmanager.R
 
-class LoadingDialog public constructor(context: Context) : AlertDialog(context) {
+class LoadingDialog public constructor(context: Context) : AlertDialog(context,R.style.dialog) {
 
-    override fun setContentView(view: View) {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.dialog_loading)
     }
 }

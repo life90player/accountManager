@@ -14,7 +14,7 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_test_main)
         mTestData.value = mList
         mTestData.observe(this,Observer{
-            strings->showToast("dataChange")
+            showToast("dataChange")
         })
     }
 

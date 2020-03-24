@@ -3,11 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
         <variable
             name="mViewModel"
             type="com.example.accountmanager.module.unBack.UnBackModel" />
-
     </data>
 
     <LinearLayout
@@ -70,11 +68,11 @@
                 app:layout_constraintBottom_toBottomOf="@+id/textView4"
                 app:layout_constraintStart_toEndOf="@+id/textView4" />
 
+<!--            android:onClick="@{()->mViewModel.requestData()}"-->
             <TextView
                 android:id="@+id/re"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="@{()->mViewModel.requestData()}"
                 android:text="刷新" />
         </LinearLayout>
 

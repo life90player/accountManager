@@ -1,117 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cly_bottom_sheet"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@android:color/white"
-    app:behavior_hideable="false"
-    app:behavior_peekHeight="@dimen/dimen_20"
-    app:layout_behavior="@string/bottom_sheet_behavior"
-    android:orientation="vertical">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/iv_top"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_20"
-        android:background="@drawable/drawable_line"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_top_add"
-        app:layout_constraintTop_toTopOf="@id/iv_top_add" />
+    <data>
+        <variable
+            name="unBackBean"
+            type="com.example.accountmanager.bean.UnbackBean" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/iv_top_add"
-        android:layout_width="@dimen/dimen_20"
-        android:layout_height="@dimen/dimen_20"
-        android:background="@drawable/drawable_ciicle"
-        android:src="@mipmap/image_top_add"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <variable
+            name="vm"
+            type="com.example.accountmanager.module.unBack.UnBackModel" />
+    </data>
 
-    <TextView
-        android:id="@+id/textView6"
-        style="@style/baseTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dimen_20"
-        android:text="赊账人："
-        app:layout_constraintBottom_toBottomOf="@+id/et_debt_user"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/et_debt_user" />
-
-    <EditText
-        android:id="@+id/et_debt_user"
-        style="@style/baseEditText"
-        android:layout_width="@dimen/dimen_100"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_10"
-        android:hint="赊账人"
-        android:maxLines="1"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/iv_top_add" />
-
-    <TextView
-        android:id="@+id/textView7"
-        style="@style/baseTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dimen_20"
-        android:text="赊账金额："
-        app:layout_constraintBottom_toBottomOf="@+id/et_debt_user"
-        app:layout_constraintStart_toEndOf="@+id/et_debt_user"
-        app:layout_constraintTop_toTopOf="@+id/et_debt_user" />
-
-    <androidx.appcompat.widget.AppCompatEditText
-        style="@style/baseEditText"
-        android:layout_width="@dimen/dimen_100"
-        android:layout_height="wrap_content"
-        android:hint="赊账金额"
-        android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="@id/et_debt_user"
-        app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:layout_constraintTop_toTopOf="@id/et_debt_user" />
-
-    <TextView
-        android:id="@+id/tv_remark"
-        style="@style/baseTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dimen_20"
-        android:layout_marginTop="@dimen/dimen_10"
-        android:text="备注："
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_debt_user" />
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/et_remark"
-        style="@style/baseEditText"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cly_bottom_sheet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dimen_20"
-        android:layout_marginTop="@dimen/dimen_10"
-        android:layout_marginEnd="@dimen/dimen_20"
-        android:gravity="start"
-        android:hint="请输入备注(非必填)："
-        android:minLines="2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_remark" />
+        android:background="@android:color/white"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="@dimen/dimen_20"
+        app:layout_behavior="@string/bottom_sheet_behavior"
+        android:orientation="vertical">
 
-    <TextView
-        style="@style/baseTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginEnd="@dimen/dimen_20"
-        android:layout_marginStart="@dimen/dimen_20"
-        android:background="@color/mainColor"
-        android:layout_marginBottom="@dimen/dimen_20"
-        android:paddingStart="@dimen/dimen_15"
-        android:paddingTop="@dimen/dimen_5"
-        android:paddingEnd="@dimen/dimen_15"
-        android:paddingBottom="@dimen/dimen_5"
-        android:text="添加"
-        app:layout_constraintTop_toBottomOf="@+id/et_remark"
-        android:layout_marginTop="@dimen/dimen_10"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:textColor="@android:color/white" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_top"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_20"
+            android:background="@drawable/drawable_line"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_top_add"
+            app:layout_constraintTop_toTopOf="@id/iv_top_add" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_top_add"
+            android:layout_width="@dimen/dimen_20"
+            android:layout_height="@dimen/dimen_20"
+            android:background="@drawable/drawable_ciicle"
+            android:src="@mipmap/image_top_add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView6"
+            style="@style/baseTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:text="赊账人："
+            app:layout_constraintBottom_toBottomOf="@+id/et_debt_user"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/et_debt_user" />
+
+        <EditText
+            android:id="@+id/et_debt_user"
+            style="@style/baseEditText"
+            android:layout_width="@dimen/dimen_100"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:hint="赊账人"
+            android:maxLines="1"
+            android:text="@{unBackBean.debtUser}"
+            app:layout_constraintStart_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toBottomOf="@+id/iv_top_add" />
+
+        <TextView
+            android:id="@+id/textView7"
+            style="@style/baseTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:text="赊账金额："
+            app:layout_constraintBottom_toBottomOf="@+id/et_debt_user"
+            app:layout_constraintStart_toEndOf="@+id/et_debt_user"
+            app:layout_constraintTop_toTopOf="@+id/et_debt_user" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            style="@style/baseEditText"
+            android:layout_width="@dimen/dimen_100"
+            android:layout_height="wrap_content"
+            android:hint="赊账金额"
+            android:text="@{String.valueOf(unBackBean.backMoney)}"
+            android:inputType="numberDecimal"
+            app:layout_constraintBottom_toBottomOf="@id/et_debt_user"
+            app:layout_constraintStart_toEndOf="@+id/textView7"
+            app:layout_constraintTop_toTopOf="@id/et_debt_user" />
+
+        <TextView
+            android:id="@+id/tv_remark"
+            style="@style/baseTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:text="备注："
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_debt_user" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_remark"
+            style="@style/baseEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:layout_marginEnd="@dimen/dimen_20"
+            android:gravity="start"
+            android:hint="请输入备注(非必填)："
+            android:minLines="2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_remark" />
+
+        <TextView
+            style="@style/baseTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginEnd="@dimen/dimen_20"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:background="@color/mainColor"
+            android:layout_marginBottom="@dimen/dimen_20"
+            android:paddingTop="@dimen/dimen_5"
+            android:paddingBottom="@dimen/dimen_5"
+            android:text="添加"
+            android:onClick="@{(v)->vm.createUnBackOrder()}"
+            app:layout_constraintTop_toBottomOf="@+id/et_remark"
+            android:layout_marginTop="@dimen/dimen_10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="@android:color/white" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
 

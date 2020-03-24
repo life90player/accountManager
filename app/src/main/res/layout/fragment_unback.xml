@@ -3,12 +3,14 @@
     xmlns:bind="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="mViewModel"
             type="com.example.accountmanager.module.unBack.UnBackModel" />
+
         <variable
             name="mPostUnbackBean"
-            type="com.example.accountmanager.bean.UnbackBean" />
+            type="com.example.accountmanager.bean.UnbackBean"/>
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -16,10 +18,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include layout="@layout/child_unback_main"
-            bind:mViewModel = "@{mViewModel}"/>
+        <include
+            layout="@layout/child_unback_main"
+            bind:mViewModel="@{mViewModel}" />
 
-        <include layout="@layout/child_unback_sheet" />
+        <include
+            layout="@layout/child_unback_sheet"
+            bind:unBackBean="@{mPostUnbackBean}"
+            bind:vm="@{mViewModel}"/>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

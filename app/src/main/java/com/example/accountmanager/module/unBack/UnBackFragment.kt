@@ -9,12 +9,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.accountmanager.R
 import com.example.accountmanager.base.BaseFragment
 import com.example.accountmanager.databinding.FragmentUnbackBinding
-import com.example.accountmanager.module.monitData.DataMonitor
 import kotlinx.android.synthetic.main.child_unback_main.*
 
 class UnBackFragment : BaseFragment() {
     private val mAdapter by lazy {
-        UnBackAdapter(R.layout.item_unback,mViewModel.listLiveData.value)}
+        UnBackAdapter(R.layout.item_unback,mViewModel.mData.value)}
     private val mViewModel by lazy{
         UnBackModel()
     }
@@ -23,13 +22,14 @@ class UnBackFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         rv_content.layoutManager = LinearLayoutManager(context)
         rv_content.adapter = mAdapter
-        mViewModel.listLiveData.observe(viewLifecycleOwner,androidx.lifecycle.Observer {
+        mViewModel.mData.observe(viewLifecycleOwner,androidx.lifecycle.Observer {
             mAdapter.data.clear()
             mAdapter.data.addAll(it)
             mAdapter.notifyDataSetChanged()
         })
         re.setOnClickListener {
-            mViewModel.listLiveData.value = DataMonitor.unbackList
+            showLoading()
+//            mViewModel.mData.value = DataMonitor.unbackList
         }
     }
 

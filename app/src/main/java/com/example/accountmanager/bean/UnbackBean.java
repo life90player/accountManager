@@ -17,6 +17,10 @@ public class UnbackBean {
         heard = b;
     }
 
+    public UnbackBean(){
+
+    }
+
     public long getBackMoney() {
         return backMoney;
     }
