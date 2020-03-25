@@ -1,9 +1,9 @@
 package com.example.accountmanager.module.unBack
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.accountmanager.base.BaseSubscriber
 import com.example.accountmanager.base.BaseViewModel
+import com.example.accountmanager.base.RequestMap
 import com.example.accountmanager.bean.BaseResponse
 import com.example.accountmanager.bean.UnbackBean
 import com.example.accountmanager.network.HttpManager
@@ -16,9 +16,11 @@ class UnBackModel : BaseViewModel() {
         d.value = ArrayList()
         d
     }
-    val mPostOrder:LiveData<UnbackBean> by lazy {
-        MutableLiveData<UnbackBean>(UnbackBean())
-    }
+
+//    val mTotalMoney = MutableLiveData<String>()//账目金额
+    val mCreditor = MutableLiveData<String>()//赊账人
+    val mRemark = MutableLiveData<String>()//备注
+
 
     fun requestData() {
 //        val list = DataMonitor.unbackList
@@ -26,8 +28,15 @@ class UnBackModel : BaseViewModel() {
     }
 
     fun createUnBackOrder(){
+        val map = RequestMap()
+            .put("","")
+            .put("","")
+            .put("","")
+            .put("","")
+            .map
+
         HttpManager.getManager()
-                .postUnBackOrder(HttpManager.formatParams(mPostOrder.value))
+                .postUnBackOrder(HttpManager.formatParams(map))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(object:BaseSubscriber<BaseResponse<String>>(){

@@ -4,10 +4,6 @@
 
     <data>
         <variable
-            name="unBackBean"
-            type="com.example.accountmanager.bean.UnbackBean" />
-
-        <variable
             name="vm"
             type="com.example.accountmanager.module.unBack.UnBackModel" />
     </data>
@@ -59,7 +55,7 @@
             android:layout_marginTop="@dimen/dimen_10"
             android:hint="赊账人"
             android:maxLines="1"
-            android:text="@{unBackBean.debtUser}"
+            android:text="@={vm.mCreditor}"
             app:layout_constraintStart_toEndOf="@+id/textView6"
             app:layout_constraintTop_toBottomOf="@+id/iv_top_add" />
 
@@ -79,7 +75,6 @@
             android:layout_width="@dimen/dimen_100"
             android:layout_height="wrap_content"
             android:hint="赊账金额"
-            android:text="@{String.valueOf(unBackBean.backMoney)}"
             android:inputType="numberDecimal"
             app:layout_constraintBottom_toBottomOf="@id/et_debt_user"
             app:layout_constraintStart_toEndOf="@+id/textView7"
@@ -104,6 +99,7 @@
             android:layout_marginStart="@dimen/dimen_20"
             android:layout_marginTop="@dimen/dimen_10"
             android:layout_marginEnd="@dimen/dimen_20"
+            android:text="@={vm.mRemark}"
             android:gravity="start"
             android:hint="请输入备注(非必填)："
             android:minLines="2"

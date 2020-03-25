@@ -7,10 +7,6 @@
         <variable
             name="mViewModel"
             type="com.example.accountmanager.module.unBack.UnBackModel" />
-
-        <variable
-            name="mPostUnbackBean"
-            type="com.example.accountmanager.bean.UnbackBean"/>
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -24,7 +20,6 @@
 
         <include
             layout="@layout/child_unback_sheet"
-            bind:unBackBean="@{mPostUnbackBean}"
             bind:vm="@{mViewModel}"/>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
